@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '#%6nbhiicw@6*-0fpw%y27x%xx$2+j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['*'] // 크롤링할때 모든것을 받아준다는 뜻 크롤링 허가
+ALLOWED_HOSTS = ['*']  
 
 
 # Application definition
@@ -125,6 +125,9 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '.media')
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
